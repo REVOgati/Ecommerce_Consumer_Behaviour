@@ -5,6 +5,7 @@
 ### **PROJECT OVERVIEW**
 
 **Bussiness Problem** : Improving customer retention and determining product purchase patterns.
+
 **Description:**
 - The dataset contains information about customer orders, including the day of the week, hour of the day, and days since the prior order.
 
