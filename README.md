@@ -3,7 +3,7 @@
 ## *TABLE OF CONTENT*
 
 ### **PROJECT OVERVIEW**
-
+	$$$$ *N/B : If this part is still here, it means i'm still working on this project. I have my README.md reminders here : Remember to add horizontal lines for organization and aesthetics for user.
 **Bussiness Problem** : Improving customer retention and determining product purchase patterns.
 
 **Description:**
