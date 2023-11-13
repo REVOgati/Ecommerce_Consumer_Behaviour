@@ -36,18 +36,19 @@
 
 ### **Data Sources**
 
-- The dataset was sourced from a Kaggle account[Click here to view account]().
-- The dataset is said to be that of a grocery store in---- for their orders in a given time period in the year 2023 as explain[here]().
+- The dataset was sourced from a Kaggle account[Click here to view account](https://www.kaggle.com/hunter0007).
+
+- The dataset is from a real E-commerce grocery store called ; 'Hunter's e-grocery for their orders in a given time period in the year 2023 as explained [here](https://www.kaggle.com/datasets/hunter0007/ecommerce-dataset-for-predictive-marketing-2023/data).
 
 ###	**Tools Used**
 
-- _Cleaning and Preparation_: The dataset contains very many entries and I used **Python** programming language for the cleaning and preparation. Python programming is one of the most powerful tools in data analysis as it can handle thousands of entries without the possibility of crashing, unlike Excel.
+- __Cleaning and Preparation__: The dataset contains very many entries and I used **Python** programming language for the cleaning and preparation. Python programming is one of the most powerful tools in data analysis as it can handle thousands of entries without the possibility of crashing, unlike Excel.
 
-- _Exploratory Data Analysis_: For the Data Analysis and insights drawing process, I used **SQL** in order to improve my practise.
+- __Exploratory Data Analysis__: For the Data Analysis and insights drawing process, I used **Python** and **SQL** in order to improve my practise.
 
-- _Visualizations_: I used both **R programming** and **Tableau** depending on the specific goals to effectively display my findings. 
+- __Visualizations__: I used both **R programming** and **Tableau** depending on the specific goals to effectively display my findings. 
 
-- _Presentation_: I used **Google slides** to create a simplified explanation of the entire process. This is in order to enable easy and direct understanding by of the project. The slides are made with clarity and simplification,in that, even one with zero knowledge of data analysis understands the steps taken in meeting the objectives. 
+- _*Presentation*_: I used **Google slides** to create a simplified explanation of the entire process. This is in order to enable easy and direct understanding by of the project. The slides are made with clarity and simplification,in that, even one with zero knowledge of data analysis understands the steps taken in meeting the objectives. 
 
 
 ### **Data Cleaning and Preparation**
@@ -62,7 +63,7 @@ The dataset contains the following columns:
 
    - order_number - Number OF THE ORDER
 
-   - order_dow -Day of the Week the order was made(either 0,1,2,3,4,5,6)
+   - order_dow -Day of the Week the order was made(either 0,1,2,3,4,5,6) - '0' represents Monday and '6' represents Sunday
 
    - order_hour_of_day - Hour of the day order was made
 
@@ -74,7 +75,7 @@ The dataset contains the following columns:
 
    - reordered - If the re-order took place ( is in binary of 0 or 1)
 
-   - department_id - specific department identity that a  product is part of
+   - department_id - specific department identity that an ordered product is part of.
 
    - department - name of department
 
