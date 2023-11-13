@@ -14,6 +14,7 @@
  - The goal is to improve customer retention and determine product purchase patterns and re-ordering in relation to consumer behaviour.
 
  - Therefore, the analysis will consists of the following:
+   
 	**1. Customer Segmentation:** 
  			- What are the distinct customer segments based on their purchasing behavior?
         	- How can we categorize customers as new, returning, or loyal?
