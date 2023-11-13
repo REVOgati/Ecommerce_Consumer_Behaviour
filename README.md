@@ -36,7 +36,7 @@
 
 ### **Data Sources**
 
-- The dataset was sourced from a Kaggle account[Click here to view account](https://www.kaggle.com/hunter0007).
+- The dataset was sourced from a Kaggle account[Click here to view account](https://www.kaggle.com/hunter0007){:target="_blank"}
 
 - The dataset is from a real E-commerce grocery store called ; 'Hunter's e-grocery for their orders in a given time period in the year 2023 as explained [here](https://www.kaggle.com/datasets/hunter0007/ecommerce-dataset-for-predictive-marketing-2023/data).
 
@@ -48,7 +48,7 @@
 
 - __Visualizations__: I used both **R programming** and **Tableau** depending on the specific goals to effectively display my findings. 
 
-- _*Presentation*_: I used **Google slides** to create a simplified explanation of the entire process. This is in order to enable easy and direct understanding by of the project. The slides are made with clarity and simplification,in that, even one with zero knowledge of data analysis understands the steps taken in meeting the objectives. 
+- __Presentation__: I used **Google slides** to create a simplified explanation of the entire process. This is in order to enable easy and direct understanding by of the project. The slides are made with clarity and simplification,in that, even one with zero knowledge of data analysis understands the steps taken in meeting the objectives. 
 
 
 ### **Data Cleaning and Preparation**
