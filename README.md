@@ -36,7 +36,7 @@
 
 ### **Data Sources**
 
-- The dataset was sourced from a Kaggle account[Click here to view account](https://www.kaggle.com/hunter0007){:target="_blank"}
+- The dataset was sourced from a Kaggle account[Click here to view account](https://www.kaggle.com/hunter0007 {:target="_blank"})
 
 - The dataset is from a real E-commerce grocery store called ; 'Hunter's e-grocery for their orders in a given time period in the year 2023 as explained [here](https://www.kaggle.com/datasets/hunter0007/ecommerce-dataset-for-predictive-marketing-2023/data).
 
