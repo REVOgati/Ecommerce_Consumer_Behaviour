@@ -83,14 +83,14 @@ The dataset contains the following columns:
 
 	**Raw dataset**
 
-The dataset was too big to upload as part of my repository. Therefore,I used Google Drive as my storage area: [Click here to view raw dataset](url)
+The dataset was too big to upload as part of my repository. Therefore,I used Google Drive as my storage area: [Click here to view and download original dataset](https://drive.google.com/file/d/1-6CzS3g7AOjxRwwndnUUHWhF5_Bec5Xn/view?usp=sharing)
 
 The following are the steps in my data cleaning process:
 
 
 - Confirmation
 	**Clean dataset**
-After preparation process, the cleaned dataset was also uploaded in my Google Drive: [Click here to view clean dataset]()
+After cleaning and preparation process, the cleaned dataset was also uploaded in my Google Drive: [Click here to view and download clean dataset](/https://docs.google.com/spreadsheets/d/1Fyxl9P_ApXpDl7CixTMg-Z0m8FMBve5D/edit?usp=drive_link&ouid=102527141955837924247&rtpof=true&sd=true)
 
 
 ### **Exploratory Data Analysis**
