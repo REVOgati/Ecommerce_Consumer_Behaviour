@@ -19,7 +19,7 @@
  			- What are the distinct customer segments based on their purchasing behavior?
         	- How can we categorize customers as new, returning, or loyal?
    
-	**2.Customer Retention: **
+	**2. Customer Retention: **
  			- What is the customer retention rate, and how can we improve it?
 			- What strategies can be implemented to reduce churn among customers?
 
