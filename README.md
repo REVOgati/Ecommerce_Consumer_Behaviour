@@ -15,23 +15,23 @@
 
  - Therefore, the analysis will consists of the following:
    
-	**1. Customer Segmentation:** 
- 			- What are the distinct customer segments based on their purchasing behavior?
-        	- How can we categorize customers as new, returning, or loyal?
+	**1. Customer Segmentation:**\
+ 			- What are the distinct customer segments based on their purchasing behavior?\
+        		- How can we categorize customers as new, returning, or loyal?
    
-	**2. Customer Retention: **
- 			- What is the customer retention rate, and how can we improve it?
+	**2. Customer Retention:**\
+ 			- What is the customer retention rate, and how can we improve it?\
 			- What strategies can be implemented to reduce churn among customers?
 
-	**3.Product and Department Insights:**
- 			- Analyze the distribution of products across different departments.
-			- Identify which departments have the highest sales and reordering rates.
+	**3.Product and Department Insights:**\
+ 			- Analyze the distribution of products across different departments.\
+			- Identify which departments have the highest sales and reordering rates.\
 			- Investigate which products and departments contribute the most to overall revenue.
 
-	**4.Market Basket Analysis:**
+	**4.Market Basket Analysis:**\
  			- Perform market basket analysis to identify product associations and frequently co-purchased products. This can inform cross-selling and bundling strategies.
 
-	**5.Re-ordering patterns:**
+	**5.Re-ordering patterns:**\
  			- Calculate the reordering rate for products
 
 
