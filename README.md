@@ -102,5 +102,6 @@ After cleaning and preparation process, the cleaned dataset was also uploaded in
 
 **1. Customer Segmentation:**\
 	- In the original dataset, the order_id column has duplicate values since we have the orders brocken down to individual products contained in a specific order. 
-	- Therefore, I used SQL to create a sub-dataset with only unique entries in the order_id column + respective user_id entries in user_id column.
-	- This is in order to individually analyze those user_ids that have only 1 respective unique order_id which will be flagged as  and those with more than 1 unique order_ids which will be flagged as returning customers.
+	- Therefore, I used SQL to create a sub-dataset with only unique entries in the order_id column + respective user_id entries in user_id column. + Days_since_prior_order column which is cohesive with the 2 columns without having any conflict
+
+	- This is in order to individually analyze those user_ids that have only 1 respective unique order_id and have 0 value in days_since_prior_order column which will be flagged as new customers and those with more than 1 unique order_ids which will be flagged as returning customers.
