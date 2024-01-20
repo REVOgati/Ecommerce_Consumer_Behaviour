@@ -25,31 +25,40 @@ FROM
 
 -- This gives us a dataset with unique order_ids.
 
-CREATE TABLE uniqueOrderID_Dataset(
+CREATE TABLE unique_OrderID_Dataset(
 	Order_ID INT,
-	USER_ID INT
+	USER_ID INT,
+	Days_Since_Prior_Order INT
 	)
 	
-INSERT INTO uniqueOrderID_Dataset(Order_ID,USER_ID)
+INSERT INTO unique_OrderID_Dataset(Order_ID,USER_ID,Days_Since_Prior_Order)
 	SELECT
 				order_id,
-				user_id
+				user_id,
+				days_since_prior_order
 			FROM
 				[dbo].[Modified_ECommerce_consumer_behaviour_dataset]
 			GROUP BY
 				order_id,
-				user_id
+				user_id,
+				days_since_prior_order
 			ORDER BY
 				user_id
 
-SELECT * FROM uniqueOrderID_Dataset
+SELECT * FROM unique_OrderID_Dataset
+
+-- Those with value 'NULL' in Days_Since_Prior_Order' Column, are those coming in for the first time to purchase.
+-- They are flagged as new customers in the systems - We will replace NULL with value 0
+
+UPDATE unique_OrderID_Dataset
+SET Days_Since_Prior_Order = 0
+WHERE Days_Since_Prior_Order IS NULL;
+
+SELECT * FROM unique_OrderID_Dataset
 
 -- To check if the Column with Order_ID in new table has only unique values, we use the code below
 SELECT Order_ID
-FROM uniqueOrderID_Dataset
+FROM unique_OrderID_Dataset
 GROUP BY Order_ID
-HAVING COUNT(*) > 1; -- Counts and return all rows appearing more than once ; if 0 rows print, the the column has only unique values
-
-
-
+HAVING COUNT(*) > 1; -- Counts and return all rows appearing more than once ; if 0 rows print, the the column has only unique values.
 

@@ -99,3 +99,8 @@ After cleaning and preparation process, the cleaned dataset was also uploaded in
 - The main focus of this dataset and project is mainly on products and their related purchasing behaviour
 
 - We still have a number of analysis focused on the buyers, but have limited paradigms based on lack of columns such as dates of user purchases among others.
+
+**1. Customer Segmentation:**\
+	- In the original dataset, the order_id column has duplicate values since we have the orders brocken down to individual products contained in a specific order. 
+	- Therefore, I used SQL to create a sub-dataset with only unique entries in the order_id column + respective user_id entries in user_id column.
+	- This is in order to individually analyze those user_ids that have only 1 respective unique order_id which will be flagged as  and those with more than 1 unique order_ids which will be flagged as returning customers.
