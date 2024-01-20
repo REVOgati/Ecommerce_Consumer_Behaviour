@@ -96,3 +96,6 @@ After cleaning and preparation process, the cleaned dataset was also uploaded in
 
 ### **Exploratory Data Analysis**
 
+- The main focus of this dataset and project is mainly on products and their related purchasing behaviour
+
+- We still have a number of analysis focused on the buyers, but have limited paradigms based on lack of columns such as dates of user purchases among others.
