@@ -11,27 +11,24 @@
 
  - We can use this data to analyze customer behavior and identify patterns related to purchase of different products.
 
- - The goal is to improve customer retention and determine product purchase patterns and re-ordering in relation to consumer behaviour.
+ - The goal is to determine product purchase patterns and re-ordering in relation to consumer behaviour.
 
  - Therefore, the analysis will consists of the following:
    
 	**1. Customer Segmentation:**\
- 			- What are the distinct customer segments based on their purchasing behavior?\
-        		- How can we categorize customers as new, returning, or loyal?
+ 			- What are the distinct customer segments?\
+        	- How can we categorize customers as new, returning, or loyal?
    
-	**2. Customer Retention:**\
- 			- What is the customer retention rate, and how can we improve it?\
-			- What strategies can be implemented to reduce churn among customers?
 
-	**3.Product and Department Insights:**\
+	**2.Product and Department Insights:**\
  			- Analyze the distribution of products across different departments.\
 			- Identify which departments have the highest sales and reordering rates.\
 			- Investigate which products and departments contribute the most to overall revenue.
 
-	**4.Market Basket Analysis:**\
+	**3.Market Basket Analysis:**\
  			- Perform market basket analysis to identify product associations and frequently co-purchased products. This can inform cross-selling and bundling strategies.
 
-	**5.Re-ordering patterns:**\
+	**4.Re-ordering patterns:**\
  			- Calculate the reordering rate for products
 
 
@@ -104,4 +101,7 @@ After cleaning and preparation process, the cleaned dataset was also uploaded in
 	- In the original dataset, the order_id column has duplicate values since we have the orders brocken down to individual products contained in a specific order. 
 	- Therefore, I used SQL to create a sub-dataset with only unique entries in the order_id column + respective user_id entries in user_id column. + Days_since_prior_order column which is cohesive with the 2 columns without having any conflict
 
-	- This is in order to individually analyze those user_ids that have only 1 respective unique order_id and have 0 value in days_since_prior_order column which will be flagged as new customers and those with more than 1 unique order_ids which will be flagged as returning customers.
+	- Click to view the SQL file :  [https://github.com/REVOgati/Ecommerce_Consumer_Behaviour/blob/155c3faa481e21f0e32490816ee21f0323d13587/SQL_Consumer_Segmentation.sql](SQL_Consumer_Segmentation)
+
+
+**2.Product and Department Insights:**\
