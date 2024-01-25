@@ -13,23 +13,25 @@
 
  - The goal is to determine product purchase patterns and re-ordering in relation to consumer behaviour.
 
- - Therefore, the analysis will consists of the following:
+ - Therefore, the analysis will consists of the following 4 and their details to follow after in the phase: [Exploratory Data Analysis](#exploratory-data-analysis) to give you a full overview of the analysis process.
    
 	**1. Customer Segmentation:**\
  			- What are the distinct customer segments?\
-        	- How can we categorize customers as new, returning, or loyal?
+        	- How can we categorize customers as new or existing?\
+			-Purporse : To determine the general nature of the Online Store's Users.\
    
 
-	**2.Product and Department Insights:**\
- 			- Analyze the distribution of products across different departments.\
-			- Identify which departments have the highest sales and reordering rates.\
-			- Investigate which products and departments contribute the most to overall revenue.
+	**2.Product purchase Insights:**\
+			- Identify which products have the highest sales and re-ordering rate and vice-versa.\
+			- Purporse : To identify the best performing and least performing products, and draw reasons behind this, to help in improving the business sales.\
 
 	**3.Market Basket Analysis:**\
- 			- Perform market basket analysis to identify product associations and frequently co-purchased products. This can inform cross-selling and bundling strategies.
+ 			- Perform market basket analysis to identify product associations and frequently co-purchased products.\
+			- Purporse: To inform cross-selling and bundling strategies.\
 
-	**4.Re-ordering patterns:**\
- 			- Calculate the reordering rate for products
+	**4. Time-related Patterns:**\
+ 			- Calculate which time of the 24hour clock are most orders made, and which ones.\
+			-Purporse: To help in human resource scheduling and product availability.\
 
 
 ### **Data Sources**
@@ -93,15 +95,43 @@ After cleaning and preparation process, the cleaned dataset was also uploaded in
 
 ### **Exploratory Data Analysis**
 
-- The main focus of this dataset and project is mainly on products and their related purchasing behaviour
-
-- We still have a number of analysis focused on the buyers, but have limited paradigms based on lack of columns such as dates of user purchases among others.
-
-**1. Customer Segmentation:**\
-	- In the original dataset, the order_id column has duplicate values since we have the orders brocken down to individual products contained in a specific order. 
-	- Therefore, I used SQL to create a sub-dataset with only unique entries in the order_id column + respective user_id entries in user_id column. + Days_since_prior_order column which is cohesive with the 2 columns without having any conflict
-
-	- Click to view the SQL file :  [https://github.com/REVOgati/Ecommerce_Consumer_Behaviour/blob/155c3faa481e21f0e32490816ee21f0323d13587/SQL_Consumer_Segmentation.sql](SQL_Consumer_Segmentation)
+- The main focus of this dataset and project is mainly on products and their related purchasing behaviour.
 
 
-**2.Product and Department Insights:**\
+#### **1. Customer Segmentation:**
+     
+	 **QUESTIONS**\
+	- In the original dataset, the order_id column has duplicate values since we have the orders brocken down to individual products contained in a specific order.\ 
+	- Therefore, I used SQL to create a sub-dataset with only unique entries in the order_id column + respective user_id entries in user_id column. + Days_since_prior_order column which is cohesive with the 2 columns without having any conflict.\
+
+	- Click to view the SQL file :  [https://github.com/REVOgati/Ecommerce_Consumer_Behaviour/blob/155c3faa481e21f0e32490816ee21f0323d13587/SQL_Consumer_Segmentation.sql](SQL_Consumer_Segmentation) \
+
+	INSIGHTS:\
+	=========
+	
+	- The data is collected over a long period of time, however the limit is set to 30 days.\
+	- Therefore, those users that only bought once in this period are given the value 30 in the 'days_since_prior_order' column.\
+
+	- Therefore, those with 30 in the said column are not new users, but already established users,
+	 that have not ordered in a long period.\
+
+	- However, those with 0 in the said column, are new users that have ordered for the first time.\
+	- Therefore, a #new user is that who has a value of 0 on the days_since_prior_order column as this is their first ever order.\
+	- Existing users are the rest. To note is, there is repetitions of various USER_IDs and this is handled as well.
+
+	ASSUMPTIONS:\
+	============
+  
+    - There were many unique USER_IDs that had more than 1 occurence of the value 0 in the days_since_prior_order column meaning they may have made more than 1 order in their first day. \
+	- I used filtering and grouping techniques to handle this and get the correct number of new users in the period.
+
+
+
+
+#### **2.Product purchase Insights:**\
+
+	**QUESTIONS**\
+
+#### **3.Market Basket Analysis:**\
+
+#### **4. Time-related Patterns:**\
