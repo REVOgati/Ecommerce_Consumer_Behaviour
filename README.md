@@ -30,8 +30,14 @@
 			- Purporse: To inform cross-selling and bundling strategies.\
 
 	**4. Time-related Patterns:**\
+			- Explore the order time of the day and day of the week to identify peak shopping times.\
  			- Calculate which time of the 24hour clock are most orders made, and which ones.\
-			-Purporse: To help in human resource scheduling and product availability.\
+			-Purporse: To help in human resource scheduling and iventory planning.\
+
+	**5. Cart Analysis:**\
+
+		    - Items per Cart: Explore the number of products added to a cart per order.\
+			- Cart Abandonment: Identify instances where products are added to the cart but not purchased.\
 
 
 ### **Data Sources**
@@ -131,7 +137,14 @@ After cleaning and preparation process, the cleaned dataset was also uploaded in
 #### **2.Product purchase Insights:**\
 
 	**QUESTIONS**\
+    - Which products are most ordered in specific departments in the dataset? - To determine the most and least purchased products in every department.
+
+	- Which products are most re-ordered and vice-versa, and why? - To determine which products attract most purchases and vice-versa.
 
 #### **3.Market Basket Analysis:**\
 
 #### **4. Time-related Patterns:**\
+	- At what time of the 24hour day, are the highest orders made? - To help in human resource allocation\
+    - At what day of the week are the highest orders made?
+	- At what day of the week are certain products most purchased?
+	- What time of the day, is the most purchased products mostly ordered? - To hel
