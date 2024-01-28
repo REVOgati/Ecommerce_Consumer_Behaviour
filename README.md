@@ -143,6 +143,8 @@ After cleaning and preparation process, the cleaned dataset was also uploaded in
 
 #### **3.Market Basket Analysis:**\
 
+	- Use of Apriori Algorithm - A Machine Learning algorithm tailed for many tasks, among them ; Market Basket Analysis.
+
 #### **4. Time-related Patterns:**\
 	- At what time of the 24hour day, are the highest orders made? - To help in human resource allocation\
     - At what day of the week are the highest orders made?
