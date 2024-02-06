@@ -11,33 +11,34 @@
 
  - We can use this data to analyze customer behavior and identify patterns related to purchase of different products.
 
- - The goal is to determine product purchase patterns and re-ordering in relation to consumer behaviour.
+ - The goal is to determine product purchase and re-ordering patterns in relation to consumer behaviour.
 
  - Therefore, the analysis will consists of the following 4 and their details to follow after in the phase: [Exploratory Data Analysis](#exploratory-data-analysis) to give you a full overview of the analysis process.
    
 	**1. Customer Segmentation:**\
  			- What are the distinct customer segments?\
         	- How can we categorize customers as new or existing?\
-			-Purporse : To determine the general nature of the Online Store's Users.\
+			-Purporse : To determine the general nature of the Online Store's Users.
    
 
 	**2.Product purchase Insights:**\
 			- Identify which products have the highest sales and re-ordering rate and vice-versa.\
-			- Purporse : To identify the best performing and least performing products, and draw reasons behind this, to help in improving the business sales.\
+			- Purporse : To identify the best performing and least performing products, and draw reasons behind this, to help in improving the business sales.
 
-	**3.Market Basket Analysis:**\
- 			- Perform market basket analysis to identify product associations and frequently co-purchased products.\
-			- Purporse: To inform cross-selling and bundling strategies.\
-
-	**4. Time-related Patterns:**\
+	**3. Time-related Patterns:**\
 			- Explore the order time of the day and day of the week to identify peak shopping times.\
  			- Calculate which time of the 24hour clock are most orders made, and which ones.\
-			-Purporse: To help in human resource scheduling and iventory planning.\
+			-Purporse: To help in human resource scheduling and iventory planning.
+
+	**4.Market Basket Analysis:**\
+ 			- Perform market basket analysis to identify product associations and frequently co-purchased products.\
+			- Purporse: To inform cross-selling and bundling strategies.
 
 	**5. Cart Analysis:**\
 
 		    - Items per Cart: Explore the number of products added to a cart per order.\
-			- Cart Abandonment: Identify instances where products are added to the cart but not purchased.\
+			- Cart Abandonment: Identify instances where products are added to the cart but not purchased.
+			- Purporse: Determine the rate of product abandonment and how to reduce this.
 
 
 ### **Data Sources**
@@ -48,11 +49,11 @@
 
 ###	**Tools Used**
 
-- __Cleaning and Preparation__: The dataset contains very many entries and I used **Python** programming language for the cleaning and preparation. Python programming is one of the most powerful tools in data analysis as it can handle thousands of entries without the possibility of crashing, unlike Excel.
+- __Cleaning and Preparation__: The dataset contains very many entries and I used **Python** programming language for the cleaning and preparation. Python programming is one of the most powerful tools in data analysis as it can handle thousands of entries.
 
 - __Exploratory Data Analysis__: For the Data Analysis and insights drawing process, I used **Python** and **SQL** in order to improve my practise.
 
-- __Visualizations__: I used both **R programming** and **Tableau** depending on the specific goals to effectively display my findings. 
+- __Visualizations__: I used  **Tableau**  to effectively display my findings. 
 
 - __Presentation__: I used **Google slides** to create a simplified explanation of the entire process. This is in order to enable easy and direct understanding by of the project. The slides are made with clarity and simplification,in that, even one with zero knowledge of data analysis understands the steps taken in meeting the objectives. 
 
@@ -106,47 +107,100 @@ After cleaning and preparation process, the cleaned dataset was also uploaded in
 
 #### **1. Customer Segmentation:**
      
-	 **QUESTIONS**\
-	- In the original dataset, the order_id column has duplicate values since we have the orders brocken down to individual products contained in a specific order.\ 
-	- Therefore, I used SQL to create a sub-dataset with only unique entries in the order_id column + respective user_id entries in user_id column. + Days_since_prior_order column which is cohesive with the 2 columns without having any conflict.\
+	- In the original dataset, the order_id column has duplicate values.\
+	- This is bacause, for example, if an order has 3 products, the user_id and order_id are recorded 3 times, i.e for every product in the order.\
+	- Thus, I combined the products in respective order batches in order to handle duplicate values.\
+	
+	- I used SQL to create a sub-dataset with only unique entries in the order_id column + respective user_id entries in user_id column. + Days_since_prior_order column which is cohesive with the 2 columns without having any conflict.\
 
 	- Click to view the SQL file :  [https://github.com/REVOgati/Ecommerce_Consumer_Behaviour/blob/155c3faa481e21f0e32490816ee21f0323d13587/SQL_Consumer_Segmentation.sql](SQL_Consumer_Segmentation) \
 
-	INSIGHTS:\
-	=========
-	
-	- The data is collected over a long period of time, however the limit is set to 30 days.\
-	- Therefore, those users that only bought once in this period are given the value 30 in the 'days_since_prior_order' column.\
-
-	- Therefore, those with 30 in the said column are not new users, but already established users,
-	 that have not ordered in a long period.\
-
-	- However, those with 0 in the said column, are new users that have ordered for the first time.\
-	- Therefore, a #new user is that who has a value of 0 on the days_since_prior_order column as this is their first ever order.\
-	- Existing users are the rest. To note is, there is repetitions of various USER_IDs and this is handled as well.
-
-	ASSUMPTIONS:\
-	============
-  
-    - There were many unique USER_IDs that had more than 1 occurence of the value 0 in the days_since_prior_order column meaning they may have made more than 1 order in their first day. \
-	- I used filtering and grouping techniques to handle this and get the correct number of new users in the period.
 
 
+#### **2. Product purchase Insights:**\
 
+    1. Which products are most ordered in specific departments in the dataset? - To determine the most and least purchased products in every department.\
 
-#### **2.Product purchase Insights:**\
+		- I used SQL to group products by departments, and return the total number of orders of each product.\
 
-	**QUESTIONS**\
-    - Which products are most ordered in specific departments in the dataset? - To determine the most and least purchased products in every department.
+		-A snapshot of the SQL code and the link:[https://github.com/REVOgati/Ecommerce_Consumer_Behaviour/blob/699fffc3648a992227998da47087a37e1e340930/sql_exploration_files/products_insights.sql](Product_purchase_insights)\
 
 	- Which products are most re-ordered and vice-versa, and why? - To determine which products attract most purchases and vice-versa.
 
-#### **3.Market Basket Analysis:**\
+#### **3. Time-related Patterns:**\
+	- At what time of the 24hour day, are the highest orders made? - To help in human resource allocation\
+    - At what day of the week are the highest orders made?\
+	- What time of the day, is the most purchased products mostly ordered?\
+
+	1. I grouped the items according to the values of the 24hour day to determine the time with highest orders.
+	2. Since 0 represents Monday, and 6 represents Sunday, I used SQL to return number of orders for every day.
+	3. I used an SQL code that returns the most ordered product, and its different purchase time periods.
+
+#### **4. Market Basket Analysis:**\
 
 	- Use of Apriori Algorithm - A Machine Learning algorithm tailed for many tasks, among them ; Market Basket Analysis.
 
-#### **4. Time-related Patterns:**\
-	- At what time of the 24hour day, are the highest orders made? - To help in human resource allocation\
-    - At what day of the week are the highest orders made?
-	- At what day of the week are certain products most purchased?
-	- What time of the day, is the most purchased products mostly ordered? - To hel
+#### **5. Cart Analysis:**\
+
+	- For every ordered item, I subtracted the number in the cart - order number to determine number of abandoned items.\
+	- I then stored the result in a new column 'abandoned_items'  and counted the total number per product.\
+	- The SQL snapshot and link to this: []()
+
+### **Data Visualization**
+
+### **Findings**
+
+#### **Consumer Segmentation**
+
+	- A new user is that who has a value of 0 on the days_since_prior_order column as this is their first ever order.\
+	- Existing users are the rest. To note is, there is repetitions of various USER_IDs with different values.\
+
+#### **Product purchase patterns**
+
+	- The most top six most ordered products are 'fresh fruits', 'fresh vegetables','packaged vegetables' 'fruits', 'youghurt', 'milk' and 'packaged cheese' respectively.\
+	- These six fall under the departments of either 'produce' or 'dairy eggs', each having three items.\
+
+	- The least ordered products are 'frozen juice', 'shave needs', 'beauty', 'first aid', 'eye ear care' and 'kitchen supplies' respectively.\
+	- Four of these items fall under the department 'personal care' with 'frozen' and 'household' having each one.
+
+#### **Time-related patterns**
+	1.  - The hours 10,11,14,15,13,12 have the highest number of orders.\
+		-The hours 3,4,2,5,1,0 have the least number of orders.\
+		- The above data can inform human resource allocation in the recommendations section below.\
+
+	2.  - The highest number of orders are made on Friday while the least being made on Monday.\
+		- This result may be attributed to factors only unique to the specific grocery store as much cannot be explained based of a global point of view.\
+		
+
+	3.	- The most ordered product is fresh fruits. According to my analysis, it is most ordered at the hours 10,15,11,14,13,12 respectively and least ordered at the hours 3,4,2,5,1,0.\
+
+		- Thus the time period 10am to 3pm has the highest number of orders for fresh fruits\
+		- while the time period of 12am to 5am has the least number of orders for fresh fruits.\
+
+		- This may be attributed by the following normal world assumptions:\
+			i. Can the many orders between 10am - 3pm be attributed to fact that the sun shines the most at this time and may induce cravings for fresh fruits? (Assuming the data was collected during a season with sunny weather).\
+			ii.  Hardly does anyone think about fruits past midnight as most orders at this time are mainly warm food or beverages attributing to the low number of orders at 12am - 5am.
+
+			
+
+
+
+### **Limitations and Assumptions**
+
+	1. 	- There were many unique USER_IDs that had more than 1 occurence of the value 0 in the days_since_prior_order column.\
+		-I assumed they may have made more than 1 order in their first day as the only possible explanation. \
+		- I used filtering and grouping techniques to handle this and get the correct number of new users in the period.\
+
+	2.  - The data is collected over a long period of time, however the limit is set to 30 days.\
+		- Therefore, those users that only bought once in this period are given the value 30 in the 'days_since_prior_order' column.\
+		- Therefore, those with 30 in the said column are not new users, but already established users,that have not ordered in a long period.\
+
+### *Recommendations**
+1.**On products insights**\
+
+2. **Time-related**\
+	  - There should be a significantly higher number of human resource allocation of the employees in the period 10am - 3pm due to the higher number of orders.\
+	- Thus, the should be a smaller group at the hours 12am to 5am due to the lower number of orders.
+
+
+### *References**
