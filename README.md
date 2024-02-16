@@ -142,11 +142,14 @@ After cleaning and preparation process, the cleaned dataset was also uploaded in
 
 #### **5. Cart Analysis:**\
 
-	- For every ordered item, I subtracted the number in the cart - order number to determine number of abandoned items.\
+	- For every ordered item, I subtracted the number in the cart - order number to determine number of abandoned items and multiplied by 100\
+	- This in order to get the percentange rate of cart abandonment.
 	- I then stored the result in a new column 'abandoned_items'  and counted the total number per product.\
-	- The SQL snapshot and link to this: []()
+	
 
 ### **Data Visualization**
+
+	- The data is visually represented in Tableau Public. [Click here to view](https://public.tableau.com/app/profile/gareth.tirop/viz/EcommerceStoreAnalysis_17080716552270/EcommerceStoreOrdersAnalysis)
 
 ### **Findings**
 
@@ -181,6 +184,12 @@ After cleaning and preparation process, the cleaned dataset was also uploaded in
 			i. Can the many orders between 10am - 3pm be attributed to fact that the sun shines the most at this time and may induce cravings for fresh fruits? (Assuming the data was collected during a season with sunny weather).\
 			ii.  Hardly does anyone think about fruits past midnight as most orders at this time are mainly warm food or beverages attributing to the low number of orders at 12am - 5am.
 
+#### **Cart Analysis**
+	- All results were either less than 1% or a negative for the percentage rate of cart abandonment.\
+	- This means that the percentage of users abandoning items they add to Cart is extremely low.\
+	- Therefore, this is not a problem for this Ecommerce Store.\
+	- An assumption may be, since most users are returning customers, they are well aware of the satisfying quality of the products they order.
+
 			
 
 
@@ -195,7 +204,7 @@ After cleaning and preparation process, the cleaned dataset was also uploaded in
 		- Therefore, those users that only bought once in this period are given the value 30 in the 'days_since_prior_order' column.\
 		- Therefore, those with 30 in the said column are not new users, but already established users,that have not ordered in a long period.\
 
-### *Recommendations**
+### **Recommendations**
 1.**On products insights**\
 
 2. **Time-related**\
@@ -203,4 +212,13 @@ After cleaning and preparation process, the cleaned dataset was also uploaded in
 	- Thus, the should be a smaller group at the hours 12am to 5am due to the lower number of orders.
 
 
-### *References**
+### **References**
+
+- **Visualizations** : Path to my Tableau Dashboard for this project : [Ecommerce Store Viz](https://public.tableau.com/app/profile/gareth.tirop/viz/EcommerceStoreAnalysis_17080716552270/EcommerceStoreOrdersAnalysis)\
+
+- ** Data Source** :\
+	- The dataset was sourced from a Kaggle account[Click here to view account](https://www.kaggle.com/hunter0007)\
+
+- The dataset is from a real E-commerce grocery store called ; 'Hunter's e-grocery for their orders in a given time period in the year 2023 as explained [here](https://www.kaggle.com/datasets/hunter0007/ecommerce-dataset-for-predictive-marketing-2023/data).
+
+
