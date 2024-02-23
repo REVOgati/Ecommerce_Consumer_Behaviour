@@ -1,9 +1,27 @@
 # **Analysis of Consumer Behaviour in an Ecommerce Grocery Business**
 
-## *TABLE OF CONTENT*
+## Table of Contents
+
+1. [Project Overview](#project-overview)
+2. [Data Sources](#data-sources)
+3. [Tools Used](#tools-used)
+4. [Data Cleaning and Preparation](#data-cleaning-and-preparation)
+5. [Exploratory Data Analysis](#exploratory-data-analysis)
+    - [Customer Segmentation](#1-customer-segmentation)
+    - [Product Purchase Insights](#2-product-purchase-insights)
+    - [Time-related Patterns](#3-time-related-patterns)
+    - [Cart Analysis](#4-cart-analysis)
+6. [Data Visualization](#data-visualization)
+7. [Findings](#findings)
+8. [Limitations and Assumptions](#limitations-and-assumptions)
+9. [Recommendations to Ecommerce Store and Conclusion](#recommendations-to-ecommerce-store-and-conclusion)
+10. [References](#references)
+
+---
+
 
 ### **PROJECT OVERVIEW**
-	$$$$ *N/B : If this part is still here, it means i'm still working on this project. I have my README.md reminders here : Remember to add horizontal lines for organization and aesthetics for user.
+	
 **Bussiness Problem** : Improving customer retention and determining product purchase patterns.
 
 **Description:**
@@ -13,7 +31,7 @@
 
  - The goal is to determine product purchase and re-ordering patterns in relation to consumer behaviour.
 
- - Therefore, the analysis will consists of the following 4 and their details to follow after in the phase: [Exploratory Data Analysis](#exploratory-data-analysis) to give you a full overview of the analysis process.
+ - Therefore, the analysis will consists of the following target areas: 
    
 	**1. Customer Segmentation:**\
  			- What are the distinct customer segments?\
@@ -30,11 +48,8 @@
  			- Calculate which time of the 24hour clock are most orders made, and which ones.\
 			-Purporse: To help in human resource scheduling and iventory planning.
 
-	**4.Market Basket Analysis:**\
- 			- Perform market basket analysis to identify product associations and frequently co-purchased products.\
-			- Purporse: To inform cross-selling and bundling strategies.
 
-	**5. Cart Analysis:**\
+	**4. Cart Analysis:**\
 
 		    - Items per Cart: Explore the number of products added to a cart per order.\
 			- Cart Abandonment: Identify instances where products are added to the cart but not purchased.
@@ -49,13 +64,14 @@
 
 ###	**Tools Used**
 
-- __Cleaning and Preparation__: The dataset contains very many entries and I used **Python** programming language for the cleaning and preparation. Python programming is one of the most powerful tools in data analysis as it can handle thousands of entries.
+- **Cleaning and Preparation:** Python programming language was used for data cleaning and preparation. Python is powerful and efficient for handling large datasets.
 
-- __Exploratory Data Analysis__: For the Data Analysis and insights drawing process, I used **Python** and **SQL** in order to improve my practise.
+- **Exploratory Data Analysis:** Python and SQL were utilized for data analysis and insights extraction.
 
-- __Visualizations__: I used  **Tableau**  to effectively display my findings. 
+- **Visualizations:** Tableau was used to effectively display findings.
 
-- __Presentation__: I used **Google slides** to create a simplified explanation of the entire process. This is in order to enable easy and direct understanding by of the project. The slides are made with clarity and simplification,in that, even one with zero knowledge of data analysis understands the steps taken in meeting the objectives. 
+- **Presentation:** Google Slides were employed to create a simplified explanation of the entire process, ensuring easy understanding even for those unfamiliar with data analysis.
+
 
 
 ### **Data Cleaning and Preparation**
@@ -89,35 +105,29 @@ The dataset contains the following columns:
    - product_name - name of product
 
 	**Raw dataset**
-
-The dataset was too big to upload as part of my repository. Therefore,I used Google Drive as my storage area: [Click here to view and download original dataset](https://drive.google.com/file/d/1-6CzS3g7AOjxRwwndnUUHWhF5_Bec5Xn/view?usp=sharing)
+	- For detailed information: [Click here to view and download original dataset](https://drive.google.com/file/d/1-6CzS3g7AOjxRwwndnUUHWhF5_Bec5Xn/view?usp=sharing)
 
 The following are the steps in my data cleaning process:
 
 
-- Confirmation
-	**Clean dataset**
+	**Clean dataset** \
 After cleaning and preparation process, the cleaned dataset was also uploaded in my Google Drive: [Click here to view and download clean dataset](https://docs.google.com/spreadsheets/d/1Fyxl9P_ApXpDl7CixTMg-Z0m8FMBve5D/edit?usp=drive_link&ouid=102527141955837924247&rtpof=true&sd=true)
 
 
 ### **Exploratory Data Analysis**
 
-- The main focus of this dataset and project is mainly on products and their related purchasing behaviour.
-
-
 #### **1. Customer Segmentation:**
      
 	- In the original dataset, the order_id column has duplicate values.\
-	- This is bacause, for example, if an order has 3 products, the user_id and order_id are recorded 3 times, i.e for every product in the order.\
+	- This is because every order was brocken down to individual products contained in the specific order, leading to a repeat of a unique order.\
 	- Thus, I combined the products in respective order batches in order to handle duplicate values.\
 	
-	- I used SQL to create a sub-dataset with only unique entries in the order_id column + respective user_id entries in user_id column. + Days_since_prior_order column which is cohesive with the 2 columns without having any conflict.\
-
+	- With this, I eliminated data duplication and was able to analyze the different groups of customers.\
 	- Click to view the SQL file :  [https://github.com/REVOgati/Ecommerce_Consumer_Behaviour/blob/155c3faa481e21f0e32490816ee21f0323d13587/SQL_Consumer_Segmentation.sql](SQL_Consumer_Segmentation) \
 
 
 
-#### **2. Product purchase Insights:**\
+#### **2. Product purchase Insights:**
 
     1. Which products are most ordered in specific departments in the dataset? - To determine the most and least purchased products in every department.\
 
@@ -127,7 +137,8 @@ After cleaning and preparation process, the cleaned dataset was also uploaded in
 
 	- Which products are most re-ordered and vice-versa, and why? - To determine which products attract most purchases and vice-versa.
 
-#### **3. Time-related Patterns:**\
+#### **3. Time-related Patterns:**
+
 	- At what time of the 24hour day, are the highest orders made? - To help in human resource allocation\
     - At what day of the week are the highest orders made?\
 	- What time of the day, is the most purchased products mostly ordered?\
@@ -136,11 +147,9 @@ After cleaning and preparation process, the cleaned dataset was also uploaded in
 	2. Since 0 represents Monday, and 6 represents Sunday, I used SQL to return number of orders for every day.
 	3. I used an SQL code that returns the most ordered product, and its different purchase time periods.
 
-#### **4. Market Basket Analysis:**\
 
-	- Use of Apriori Algorithm - A Machine Learning algorithm tailed for many tasks, among them ; Market Basket Analysis.
 
-#### **5. Cart Analysis:**\
+#### **4. Cart Analysis:**
 
 	- For every ordered item, I subtracted the number in the cart - order number to determine number of abandoned items and multiplied by 100\
 	- This in order to get the percentange rate of cart abandonment.
@@ -149,14 +158,14 @@ After cleaning and preparation process, the cleaned dataset was also uploaded in
 
 ### **Data Visualization**
 
-	- The data is visually represented in Tableau Public. [Click here to view](https://public.tableau.com/app/profile/gareth.tirop/viz/EcommerceStoreAnalysis_17080716552270/EcommerceStoreOrdersAnalysis)
+	- Visual representations are available on [Tableau Public](https://public.tableau.com/app/profile/gareth.tirop/viz/EcommerceStoreAnalysis_17080716552270/EcommerceStoreOrdersAnalysis).
 
 ### **Findings**
 
 #### **Consumer Segmentation**
-
-	- A new user is that who has a value of 0 on the days_since_prior_order column as this is their first ever order.\
-	- Existing users are the rest. To note is, there is repetitions of various USER_IDs with different values.\
+	- There 103,761 unique orders made.
+	- Approximately 8,405 entries with value 0 in days_since_prior_order, indicating new users.
+	- Majority of customers are returning users.
 
 #### **Product purchase patterns**
 
@@ -175,22 +184,20 @@ After cleaning and preparation process, the cleaned dataset was also uploaded in
 		- This result may be attributed to factors only unique to the specific grocery store as much cannot be explained based of a global point of view.\
 		
 
-	3.	- The most ordered product is fresh fruits. According to my analysis, it is most ordered at the hours 10,15,11,14,13,12 respectively and least ordered at the hours 3,4,2,5,1,0.\
+	3.	- The most ordered product is fresh fruits.
 
-		- Thus the time period 10am to 3pm has the highest number of orders for fresh fruits\
+		- The time period 10am to 3pm has the highest number of orders for fresh fruits\
 		- while the time period of 12am to 5am has the least number of orders for fresh fruits.\
-
-		- This may be attributed by the following normal world assumptions:\
-			i. Can the many orders between 10am - 3pm be attributed to fact that the sun shines the most at this time and may induce cravings for fresh fruits? (Assuming the data was collected during a season with sunny weather).\
-			ii.  Hardly does anyone think about fruits past midnight as most orders at this time are mainly warm food or beverages attributing to the low number of orders at 12am - 5am.
 
 #### **Cart Analysis**
 	- All results were either less than 1% or a negative for the percentage rate of cart abandonment.\
 	- This means that the percentage of users abandoning items they add to Cart is extremely low.\
 	- Therefore, this is not a problem for this Ecommerce Store.\
-	- An assumption may be, since most users are returning customers, they are well aware of the satisfying quality of the products they order.
+	- An assumption may be, since most users are returning customers, they are well aware of the satisfying quality of the products they order.\
+	- Or, due to essential nature of grocery items being sold.
+	
 
-			
+	
 
 
 
@@ -204,12 +211,26 @@ After cleaning and preparation process, the cleaned dataset was also uploaded in
 		- Therefore, those users that only bought once in this period are given the value 30 in the 'days_since_prior_order' column.\
 		- Therefore, those with 30 in the said column are not new users, but already established users,that have not ordered in a long period.\
 
-### **Recommendations**
+### **Recommendations to Ecommerce Store and Conclusion**
 1.**On products insights**\
+	- Given that the departments 'produce' or 'dairy eggs' have the highest orders, I would recommend measures to ensure consistency of quality of these products as well as their availability.\
+	- Given that the departments 'personal care', 'frozen' and 'household' have the lowest orders, measures should be put in place to promote products of these departments.\
+	- They might include improvement of product quality, research from users, advertisements or discounts.
 
 2. **Time-related**\
-	  - There should be a significantly higher number of human resource allocation of the employees in the period 10am - 3pm due to the higher number of orders.\
-	- Thus, the should be a smaller group at the hours 12am to 5am due to the lower number of orders.
+	- I would recommend that there should be a significantly higher number of human resource allocation of the employees in the period 10am - 3pm due to the higher number of orders.\
+	 - Thus, there should be a smaller group at the hours 12am to 5am due to the lower number of orders.\
+	 - This helps to balance the number of human resource against traffic in order to ensure optimality in performance.
+
+3. **Consumer Segementation**\
+	- 8% of all the customers are new users while the rest are exisiting users.\
+	- This means that a very huge number of customers are returning.
+	- I would recommend surveys to understand reasons for returning customers.
+
+4. **Cart Analysis**\
+	- The store does not have a major problem with cart abandonment as the average rate is at a percentage of less than 1%.\
+	- This might be due to the essential nature of most of its products as groceries and household items are always very readily needed.
+
 
 
 ### **References**
