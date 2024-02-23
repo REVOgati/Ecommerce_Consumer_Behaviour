@@ -50,9 +50,8 @@
 
 
 	**4. Cart Analysis:**\
-
 		    - Items per Cart: Explore the number of products added to a cart per order.\
-			- Cart Abandonment: Identify instances where products are added to the cart but not purchased.
+			- Cart Abandonment: Identify instances where products are added to the cart but not purchased.\
 			- Purporse: Determine the rate of product abandonment and how to reduce this.
 
 
@@ -104,21 +103,20 @@ The dataset contains the following columns:
 
    - product_name - name of product
 
-	**Raw dataset**
+**Raw dataset**
 	- For detailed information: [Click here to view and download original dataset](https://drive.google.com/file/d/1-6CzS3g7AOjxRwwndnUUHWhF5_Bec5Xn/view?usp=sharing)
 
 The following are the steps in my data cleaning process:
 
 
-	**Clean dataset** \
-After cleaning and preparation process, the cleaned dataset was also uploaded in my Google Drive: [Click here to view and download clean dataset](https://docs.google.com/spreadsheets/d/1Fyxl9P_ApXpDl7CixTMg-Z0m8FMBve5D/edit?usp=drive_link&ouid=102527141955837924247&rtpof=true&sd=true)
+**Clean dataset**
+	- After cleaning and preparation process, the cleaned dataset was also uploaded in my Google Drive: [Click here to view and download clean dataset](https://docs.google.com/spreadsheets/d/1Fyxl9P_ApXpDl7CixTMg-Z0m8FMBve5D/edit?usp=drive_link&ouid=102527141955837924247&rtpof=true&sd=true)
 
 
 ### **Exploratory Data Analysis**
 
 #### **1. Customer Segmentation:**
-     
-	- In the original dataset, the order_id column has duplicate values.\
+     - In the original dataset, the order_id column has duplicate values.\
 	- This is because every order was brocken down to individual products contained in the specific order, leading to a repeat of a unique order.\
 	- Thus, I combined the products in respective order batches in order to handle duplicate values.\
 	
@@ -128,17 +126,15 @@ After cleaning and preparation process, the cleaned dataset was also uploaded in
 
 
 #### **2. Product purchase Insights:**
-
-    1. Which products are most ordered in specific departments in the dataset? - To determine the most and least purchased products in every department.\
+	1. Which products are most ordered in specific departments in the dataset? - To determine the most and least purchased products in every department.\
 
 		- I used SQL to group products by departments, and return the total number of orders of each product.\
 
 		-A snapshot of the SQL code and the link:[https://github.com/REVOgati/Ecommerce_Consumer_Behaviour/blob/699fffc3648a992227998da47087a37e1e340930/sql_exploration_files/products_insights.sql](Product_purchase_insights)\
 
-	- Which products are most re-ordered and vice-versa, and why? - To determine which products attract most purchases and vice-versa.
+	2. Which products are most re-ordered and vice-versa, and why? - To determine which products attract most purchases and vice-versa.
 
 #### **3. Time-related Patterns:**
-
 	- At what time of the 24hour day, are the highest orders made? - To help in human resource allocation\
     - At what day of the week are the highest orders made?\
 	- What time of the day, is the most purchased products mostly ordered?\
@@ -150,15 +146,13 @@ After cleaning and preparation process, the cleaned dataset was also uploaded in
 
 
 #### **4. Cart Analysis:**
-
 	- For every ordered item, I subtracted the number in the cart - order number to determine number of abandoned items and multiplied by 100\
 	- This in order to get the percentange rate of cart abandonment.
 	- I then stored the result in a new column 'abandoned_items'  and counted the total number per product.\
 	
 
 ### **Data Visualization**
-
-	- Visual representations are available on [Tableau Public](https://public.tableau.com/app/profile/gareth.tirop/viz/EcommerceStoreAnalysis_17080716552270/EcommerceStoreOrdersAnalysis).
+	-  Visual representations are available on [Tableau Public](https://public.tableau.com/app/profile/gareth.tirop/viz/EcommerceStoreAnalysis_17080716552270/EcommerceStoreOrdersAnalysis).
 
 ### **Findings**
 
@@ -168,7 +162,6 @@ After cleaning and preparation process, the cleaned dataset was also uploaded in
 	- Majority of customers are returning users.
 
 #### **Product purchase patterns**
-
 	- The most top six most ordered products are 'fresh fruits', 'fresh vegetables','packaged vegetables' 'fruits', 'youghurt', 'milk' and 'packaged cheese' respectively.\
 	- These six fall under the departments of either 'produce' or 'dairy eggs', each having three items.\
 
@@ -202,43 +195,42 @@ After cleaning and preparation process, the cleaned dataset was also uploaded in
 
 
 ### **Limitations and Assumptions**
-
-	1. 	- There were many unique USER_IDs that had more than 1 occurence of the value 0 in the days_since_prior_order column.\
+	1. There were many unique USER_IDs that had more than 1 occurence of the value 0 in the days_since_prior_order column.\
 		-I assumed they may have made more than 1 order in their first day as the only possible explanation. \
 		- I used filtering and grouping techniques to handle this and get the correct number of new users in the period.\
 
-	2.  - The data is collected over a long period of time, however the limit is set to 30 days.\
+	2. The data is collected over a long period of time, however the limit is set to 30 days.\
 		- Therefore, those users that only bought once in this period are given the value 30 in the 'days_since_prior_order' column.\
 		- Therefore, those with 30 in the said column are not new users, but already established users,that have not ordered in a long period.\
 
 ### **Recommendations to Ecommerce Store and Conclusion**
-1.**On products insights**\
+1. **On products insights**\
 	- Given that the departments 'produce' or 'dairy eggs' have the highest orders, I would recommend measures to ensure consistency of quality of these products as well as their availability.\
 	- Given that the departments 'personal care', 'frozen' and 'household' have the lowest orders, measures should be put in place to promote products of these departments.\
 	- They might include improvement of product quality, research from users, advertisements or discounts.
 
-2. **Time-related**\
-	- I would recommend that there should be a significantly higher number of human resource allocation of the employees in the period 10am - 3pm due to the higher number of orders.\
-	 - Thus, there should be a smaller group at the hours 12am to 5am due to the lower number of orders.\
+2. **Time-related**
+	- I would recommend that there should be a significantly higher number of human resource allocation of the employees in the period 10am - 3pm due to the higher number of orders.
+	 - Thus, there should be a smaller group at the hours 12am to 5am due to the lower number of orders.
 	 - This helps to balance the number of human resource against traffic in order to ensure optimality in performance.
 
-3. **Consumer Segementation**\
-	- 8% of all the customers are new users while the rest are exisiting users.\
+3. **Consumer Segementation**
+	- 8% of all the customers are new users while the rest are exisiting users.
 	- This means that a very huge number of customers are returning.
 	- I would recommend surveys to understand reasons for returning customers.
 
-4. **Cart Analysis**\
-	- The store does not have a major problem with cart abandonment as the average rate is at a percentage of less than 1%.\
+4. **Cart Analysis**
+	- The store does not have a major problem with cart abandonment as the average rate is at a percentage of less than 1%.
 	- This might be due to the essential nature of most of its products as groceries and household items are always very readily needed.
 
 
 
 ### **References**
 
-- **Visualizations** : Path to my Tableau Dashboard for this project : [Ecommerce Store Viz](https://public.tableau.com/app/profile/gareth.tirop/viz/EcommerceStoreAnalysis_17080716552270/EcommerceStoreOrdersAnalysis)\
+- **Visualizations** : Path to my Tableau Dashboard for this project : [Ecommerce Store Viz](https://public.tableau.com/app/profile/gareth.tirop/viz/EcommerceStoreAnalysis_17080716552270/EcommerceStoreOrdersAnalysis)
 
-- ** Data Source** :\
-	- The dataset was sourced from a Kaggle account[Click here to view account](https://www.kaggle.com/hunter0007)\
+- **Data Source** :
+	- The dataset was sourced from a Kaggle account[Click here to view account](https://www.kaggle.com/hunter0007)
 
 - The dataset is from a real E-commerce grocery store called ; 'Hunter's e-grocery for their orders in a given time period in the year 2023 as explained [here](https://www.kaggle.com/datasets/hunter0007/ecommerce-dataset-for-predictive-marketing-2023/data).
 
