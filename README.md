@@ -79,7 +79,7 @@
 
 The dataset contains the following columns:
 
-   - order_id - unique identity of order
+	- order_id - unique identity of order
 
    - user_id -unique identity of user/customer
 
@@ -115,86 +115,81 @@ The following are the steps in my data cleaning process:
 
 ### **Exploratory Data Analysis**
 
-#### **1. Customer Segmentation:**
-     - In the original dataset, the order_id column has duplicate values.\
+- #### **1. Customer Segmentation:**
+	- In the original dataset, the order_id column has duplicate values.\
 	- This is because every order was brocken down to individual products contained in the specific order, leading to a repeat of a unique order.\
-	- Thus, I combined the products in respective order batches in order to handle duplicate values.\
-	
-	- With this, I eliminated data duplication and was able to analyze the different groups of customers.\
-	- Click to view the SQL file :  [https://github.com/REVOgati/Ecommerce_Consumer_Behaviour/blob/155c3faa481e21f0e32490816ee21f0323d13587/SQL_Consumer_Segmentation.sql](SQL_Consumer_Segmentation) \
+	- Thus, I combined the products in respective order batches in order to handle duplicate values.
+		
+    - With this, I eliminated data duplication and was able to analyze the different groups of customers.\
+		- Click to view the SQL file: [SQL_Consumer_Segmentation] (https://github.com/REVOgati/Ecommerce_Consumer_Behaviour/blob/155c3faa481e21f0e32490816ee21f0323d13587/SQL_Consumer_Segmentation.sql) 
 
 
 
-#### **2. Product purchase Insights:**
-	1. Which products are most ordered in specific departments in the dataset? - To determine the most and least purchased products in every department.\
+	- #### **2. Product purchase Insights:**
+		1. Which products are most ordered in specific departments in the dataset? - To determine the most and least purchased products in every department.\
 
-		- I used SQL to group products by departments, and return the total number of orders of each product.\
+			- I used SQL to group products by departments, and return the total number of orders of each product.\
 
-		-A snapshot of the SQL code and the link:[https://github.com/REVOgati/Ecommerce_Consumer_Behaviour/blob/699fffc3648a992227998da47087a37e1e340930/sql_exploration_files/products_insights.sql](Product_purchase_insights)\
+			-A snapshot of the SQL code and the link:[Product purchase insights](https://github.com/REVOgati/Ecommerce_Consumer_Behaviour/blob/699fffc3648a992227998da47087a37e1e340930/sql_exploration_files/products_insights.sql)
 
-	2. Which products are most re-ordered and vice-versa, and why? - To determine which products attract most purchases and vice-versa.
+		2. Which products are most re-ordered and vice-versa, and why? - To determine which products attract most purchases and vice-versa.
 
-#### **3. Time-related Patterns:**
-	- At what time of the 24hour day, are the highest orders made? - To help in human resource allocation\
-    - At what day of the week are the highest orders made?\
-	- What time of the day, is the most purchased products mostly ordered?\
+	- #### **3. Time-related Patterns:**
+		- At what time of the 24hour day, are the highest orders made? - To help in human resource allocation\
+		- At what day of the week are the highest orders made?\
+		- What time of the day, is the most purchased products mostly ordered?
 
-	1. I grouped the items according to the values of the 24hour day to determine the time with highest orders.
-	2. Since 0 represents Monday, and 6 represents Sunday, I used SQL to return number of orders for every day.
-	3. I used an SQL code that returns the most ordered product, and its different purchase time periods.
+		1. I grouped the items according to the values of the 24hour day to determine the time with highest orders.\
+		2. Since 0 represents Monday, and 6 represents Sunday, I used SQL to return number of orders for every day.\
+		3. I used an SQL code that returns the most ordered product, and its different purchase time periods.
 
 
 
-#### **4. Cart Analysis:**
-	- For every ordered item, I subtracted the number in the cart - order number to determine number of abandoned items and multiplied by 100\
-	- This in order to get the percentange rate of cart abandonment.
-	- I then stored the result in a new column 'abandoned_items'  and counted the total number per product.\
-	
+	- #### **4. Cart Analysis:**
+		- For every ordered item, I subtracted the number in the cart - order number to determine number of abandoned items and multiplied by 100.
+		- This in order to get the percentange rate of cart abandonment.
+		- I then stored the result in a new column 'abandoned_items'  and counted the total number per product.
+		
 
-### **Data Visualization**
-	-  Visual representations are available on [Tableau Public](https://public.tableau.com/app/profile/gareth.tirop/viz/EcommerceStoreAnalysis_17080716552270/EcommerceStoreOrdersAnalysis).
+- ### **Data Visualization**
+	- Visual representations are available on [Tableau Public](https://public.tableau.com/app/profile/gareth.tirop/viz/EcommerceStoreAnalysis_17080716552270/EcommerceStoreOrdersAnalysis).
 
 ### **Findings**
 
-#### **Consumer Segmentation**
+- **Consumer Segmentation**
 	- There 103,761 unique orders made.
 	- Approximately 8,405 entries with value 0 in days_since_prior_order, indicating new users.
 	- Majority of customers are returning users.
 
-#### **Product purchase patterns**
-	- The most top six most ordered products are 'fresh fruits', 'fresh vegetables','packaged vegetables' 'fruits', 'youghurt', 'milk' and 'packaged cheese' respectively.\
-	- These six fall under the departments of either 'produce' or 'dairy eggs', each having three items.\
+- **Product purchase patterns**
+		- The most top six most ordered products are 'fresh fruits', 'fresh vegetables','packaged vegetables' 'fruits', 'youghurt', 'milk' and 'packaged cheese' respectively.\
+		- These six fall under the departments of either 'produce' or 'dairy eggs', each having three items.\
 
-	- The least ordered products are 'frozen juice', 'shave needs', 'beauty', 'first aid', 'eye ear care' and 'kitchen supplies' respectively.\
-	- Four of these items fall under the department 'personal care' with 'frozen' and 'household' having each one.
+		- The least ordered products are 'frozen juice', 'shave needs', 'beauty', 'first aid', 'eye ear care' and 'kitchen supplies' respectively.\
+		- Four of these items fall under the department 'personal care' with 'frozen' and 'household' having each one.
 
-#### **Time-related patterns**
-	1.  - The hours 10,11,14,15,13,12 have the highest number of orders.\
-		-The hours 3,4,2,5,1,0 have the least number of orders.\
-		- The above data can inform human resource allocation in the recommendations section below.\
+- **Time-related patterns**
+		1.  - The hours 10,11,14,15,13,12 have the highest number of orders.\
+			-The hours 3,4,2,5,1,0 have the least number of orders.\
+			- The above data can inform human resource allocation in the recommendations section below.\
 
-	2.  - The highest number of orders are made on Friday while the least being made on Monday.\
-		- This result may be attributed to factors only unique to the specific grocery store as much cannot be explained based of a global point of view.\
+		2.  - The highest number of orders are made on Friday while the least being made on Monday.\
+			- This result may be attributed to factors only unique to the specific grocery store as much cannot be explained based of a global point of view.\
+			
+
+		3.	- The most ordered product is fresh fruits.
+
+			- The time period 10am to 3pm has the highest number of orders for fresh fruits\
+			- while the time period of 12am to 5am has the least number of orders for fresh fruits.\
+
+- **Cart Analysis**
+		- All results were either less than 1% or a negative for the percentage rate of cart abandonment.\
+		- This means that the percentage of users abandoning items they add to Cart is extremely low.\
+		- Therefore, this is not a problem for this Ecommerce Store.\
+		- An assumption may be, since most users are returning customers, they are well aware of the satisfying quality of the products they order.\
+		- Or, due to essential nature of grocery items being sold.
 		
-
-	3.	- The most ordered product is fresh fruits.
-
-		- The time period 10am to 3pm has the highest number of orders for fresh fruits\
-		- while the time period of 12am to 5am has the least number of orders for fresh fruits.\
-
-#### **Cart Analysis**
-	- All results were either less than 1% or a negative for the percentage rate of cart abandonment.\
-	- This means that the percentage of users abandoning items they add to Cart is extremely low.\
-	- Therefore, this is not a problem for this Ecommerce Store.\
-	- An assumption may be, since most users are returning customers, they are well aware of the satisfying quality of the products they order.\
-	- Or, due to essential nature of grocery items being sold.
-	
-
-	
-
-
-
-### **Limitations and Assumptions**
+ ### **Limitations and Assumptions**
 	1. There were many unique USER_IDs that had more than 1 occurence of the value 0 in the days_since_prior_order column.\
 		-I assumed they may have made more than 1 order in their first day as the only possible explanation. \
 		- I used filtering and grouping techniques to handle this and get the correct number of new users in the period.\
